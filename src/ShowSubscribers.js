@@ -1,32 +1,10 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import './App.css'
+import './ShowSubscribers.css'
 
+class ShowSubscribers extends Component {
 
-  // let subscribers = [
-  //   {
-  //     id :1,
-  //     name: "Shilpa Bhat",
-  //     phone: "8888888888"
-  //   },
-  //   {
-  //     id :2,
-  //     name: "Srishti Gupta",
-  //     phone: "999999999"
-  //   }
-  // ]
-
-  // The array which we hardcoded above will be a part of the state now
-  class App extends Component {
-
-    constructor(){
-      super();
-      this.state = {            // Initialize the state
-        subscribersListToShow: []
-      }
-    }
-
-    render() {
+render() {
 
 return (
     <div>
@@ -41,7 +19,7 @@ return (
         </div>
 
         {
-          this.state.subscribersListToShow.map(sub => {
+          this.props.subscribersList.map(sub => {
             return <div key={sub.id} className="grid-container">
             <span className="grid-item">{sub.name}</span>
             <span className="grid-item">{sub.phone}</span>
@@ -56,4 +34,4 @@ return (
     );
   }
 }
-export default App;
+export default ShowSubscribers;
